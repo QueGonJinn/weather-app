@@ -20,7 +20,11 @@ export default function SearchBox() {
 				const match = city.name.toLowerCase().startsWith(value.toLowerCase());
 
 				if (match) {
-					matchingCities.push(city);
+					const cityData = {
+						...city, 
+						slug: `${city.name.toLowerCase().replace(/ /g, '-')}- ${city.id}`
+					}
+					matchingCities.push(cityData);
 				}
 			}
 		}
@@ -35,9 +39,9 @@ export default function SearchBox() {
 			{query.length > 3 && (
 				<ul>
 					{result.length > 0 ? (
-						result.map((city, index) => (
-							<li key={index}>
-								<Link href='/location/cityname'>
+						result.map((city) => (
+							<li key={city.slug}>
+								<Link href={`/location/${city.slug}`}>
 									<a>
 										{city.name}
 										{city.useState ? `, ${city.state}` : ''}
