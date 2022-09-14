@@ -20,7 +20,12 @@ export default function HourlyWeather({hourlyWeather, timezone}) {
 								? "Now" 
 								: moment.unix(weather.dt).tz(timezone).format('LT')}
 							</span>
-							<Image src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description} width="100" height="100"/>
+							<Image 
+								src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} 
+								alt={weather.weather[0].description}
+								width="100"
+								height="100"
+							/>
 							<span>{weather.temp.toFixed(0)}&deg;C</span>
 						</div>
 					</div>
