@@ -10,7 +10,7 @@ export default function Home() {
 
 			<div className="home">
 				<div className="container">
-				<SearchBox />	
+				<SearchBox placeholder='Search for another city...' />	
 				</div>
 			</div>
 		</div>
