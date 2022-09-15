@@ -18,7 +18,7 @@ export async function getServerSideProps(context) {
 		};
 	};
 
-	const res = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${city.coord.lat}&lon=${city.coord.lon}&appid=${process.env.API_KEY2}&exclude=minutely&units=metric`);
+	const res = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${city.coord.lat}&lon=${city.coord.lon}&appid=a4e03cb2de896678550abd37917ee24a&exclude=minutely&units=metric`);
 
 	const data = await res.json();
 
